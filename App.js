@@ -6,11 +6,12 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Borders from "./components/Borders";
 import Shadows from "./components/Shadows";
+import PaddingsAndMargins from "./components/PaddingsAndMargins";
 
 
 export default function App() {
   return (
-    <Shadows />
+    <PaddingsAndMargins />
   );
 }
 

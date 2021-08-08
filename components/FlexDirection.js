@@ -5,44 +5,51 @@ import {
   useDeviceOrientation,
   useDimensions,
 } from "@react-native-community/hooks";
-import {StyleSheet, View} from "react-native";
-
-
+import { StyleSheet, View } from "react-native";
 
 export default function App() {
   console.log(useDimensions());
   console.log(useDeviceOrientation);
-  const {portrait, landscape} = useDeviceOrientation();
+  const { portrait, landscape } = useDeviceOrientation();
   return (
     <SafeAreaProvider style={styles.container}>
       <StatusBar style="auto" />
-      <SafeAreaView style={{
-            backgroundColor : "white",
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "space-around"   ,
-            alignItems: "center "       
-        }}>
-          <View style={{
+      <SafeAreaView
+        style={{
+          backgroundColor: "white",
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "space-around",
+          alignItems: "center ",
+        }}
+      >
+        <View
+          style={{
             width: 100,
-            height: 100, 
-            backgroundColor: "dodgerblue"
-          }} />
-          <View style={{
+            height: 100,
+            backgroundColor: "dodgerblue",
+          }}
+        />
+        <View
+          style={{
             width: 100,
-            height: 100, 
-            backgroundColor: "gold"
-          }} />
-          <View style={{
+            height: 100,
+            backgroundColor: "gold",
+          }}
+        />
+        <View
+          style={{
             width: 100,
-            height: 100, 
-            backgroundColor: "tomato"
-          }} />
+            height: 100,
+            backgroundColor: "tomato",
+          }}
+        />
 
-
-      <OrientationComponent />
-      <RandomComponent style={{justifyContent: landscape ? "flex-end" : "center"}}/ >
-      <FlexComponent />
+        <OrientationComponent />
+        <RandomComponent
+          style={{ justifyContent: landscape ? "flex-end" : "center" }}
+        />
+        <FlexComponent />
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -55,5 +62,4 @@ const styles = StyleSheet.create({
     height: "60%",
     backgroundColor: "cyan",
   },
- 
 });

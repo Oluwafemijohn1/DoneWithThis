@@ -7,11 +7,12 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import Borders from "./components/Borders";
 import Shadows from "./components/Shadows";
 import PaddingsAndMargins from "./components/PaddingsAndMargins";
+import StylingText from "./components/StylingText";
 
 
 export default function App() {
   return (
-    <PaddingsAndMargins />
+    <StylingText />
   );
 }
 

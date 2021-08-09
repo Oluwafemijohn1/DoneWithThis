@@ -14,7 +14,7 @@ import Icon from "./components/Icon";
 
 export default function App() {
   return (
-    <Icon />
+    <EncapsulatingStyles />
   );
 }
 

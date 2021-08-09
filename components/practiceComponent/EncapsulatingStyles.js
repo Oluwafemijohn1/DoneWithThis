@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 
-import AppText from './style_encapsulation/platformSpecific/AppText';
-import AppText2 from './style_encapsulation/AppText2';
+import AppText from '../style_encapsulation/platformSpecific/AppText';
+
 
 export default function EncapsulatingStyles() {
     return (

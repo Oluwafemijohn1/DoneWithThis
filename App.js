@@ -5,11 +5,11 @@ import { StyleSheet, Text, Image, ImageBackground, View } from "react-native";
 
 
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
-
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 export default function App() {
   return (
-    <EncapsulatingStyles />
+    <WelcomeScreen />
   );
 }
 

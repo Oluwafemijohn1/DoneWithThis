@@ -6,10 +6,13 @@ import { StyleSheet, Text, Image, ImageBackground, View } from "react-native";
 
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import CardComponent from "./components/practiceComponent/CardComponent";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+
 
 export default function App() {
   return (
-    <WelcomeScreen />
+    <ListingDetailsScreen />
   );
 }
 

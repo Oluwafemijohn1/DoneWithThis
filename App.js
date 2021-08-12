@@ -9,10 +9,11 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import CardComponent from "./components/practiceComponent/CardComponent";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
   return (
-    <ViewImageScreen />
+    <MessagesScreen />
   );
 }
 

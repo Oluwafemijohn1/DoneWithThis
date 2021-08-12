@@ -8,11 +8,11 @@ import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingSty
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import CardComponent from "./components/practiceComponent/CardComponent";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
-
+import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
   return (
-    <ListingDetailsScreen />
+    <ViewImageScreen />
   );
 }
 

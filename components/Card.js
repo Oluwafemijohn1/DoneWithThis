@@ -3,8 +3,8 @@ import { Image } from "react-native";
 import { StyleSheet, View } from "react-native";
 import { color } from "react-native-elements/dist/helpers";
 
-import colors from "../../app/config/colors";
-import AppText from "../style_encapsulation/AppText";
+import colors from "../app/config/colors";
+import AppText from "./style_encapsulation/AppText";
 
 export default function Card({ title, subTitle, image }) {
   return (

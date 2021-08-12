@@ -4,9 +4,9 @@ import {
   StyleSheet,
 } from "react-native";
 import ListItem from "../../components/ListItem";
-import  Constants  from "expo-constants";
 
 import SafeAreaScreen from "../../components/SafeAreaScreen";
+import ListItemSeparator from "../../components/ListItemSeparator";
 
 const messages = [
   {
@@ -36,13 +36,16 @@ export default function MessagesScreen() {
             image={item.image}
           />
         )}
+        ItemSeparatorComponent={() =>
+            <ListItemSeparator />
+         }
       />
     </SafeAreaScreen>
   );
 }
 
 const styles = StyleSheet.create({
-    
+
 });
 
 

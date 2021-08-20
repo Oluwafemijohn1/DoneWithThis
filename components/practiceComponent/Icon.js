@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AppText from "./style_encapsulation/AppText";
+import AppText from "../style_encapsulation/AppText";
 
 export default function Icon() {
   return (

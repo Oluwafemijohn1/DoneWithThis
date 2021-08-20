@@ -12,12 +12,11 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import SafeAreaScreen from "./components/SafeAreaScreen";
 import Icon from "./components/Icon";
+import AccountScreen from "./app/screens/AccountScreen";
 
 export default function App() {
   return (
-    <SafeAreaScreen>
-      <Icon name='email' size={50} backgroundColor="red" iconColor="white" />
-    </SafeAreaScreen>
+    <AccountScreen />
   );
 }
 

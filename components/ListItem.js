@@ -29,6 +29,7 @@ export default function ListItem({
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   image: {
     width: 70,
     height: 70,
-    borderRadius: 35,
+    borderRadius: 35, 
     marginRight: 10,
   },
   title: {

@@ -26,6 +26,7 @@ const menuItem = [
 
 export default function AccountScreen() {
   return (
+    // Section list could all be used for this screen
     <SafeAreaScreen style={styles.screen}>
       <View style={styles.container}>
         <ListItem

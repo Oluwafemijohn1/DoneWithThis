@@ -13,10 +13,11 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import SafeAreaScreen from "./components/SafeAreaScreen";
 import Icon from "./components/Icon";
 import AccountScreen from "./app/screens/AccountScreen";
+import ListingScreen from "./app/screens/ListingScreen";
 
 export default function App() {
   return (
-    <AccountScreen />
+    <ListingScreen />
   );
 }
 

@@ -3,7 +3,6 @@ import React from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { StyleSheet, Text, Image, ImageBackground, View } from "react-native";
 
-
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import CardComponent from "./components/practiceComponent/CardComponent";
@@ -14,23 +13,15 @@ import SafeAreaScreen from "./components/SafeAreaScreen";
 import Icon from "./components/Icon";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
+import CustomTextInput from "./components/practiceComponent/CustomTextInput";
+import AppTextInput from "./components/AppTextInput";
 
 export default function App() {
   return (
-    <ListingScreen />
+    <SafeAreaScreen>
+      <AppTextInput placeholder="Username" icon="email" />
+    </SafeAreaScreen>
   );
 }
 
 
-const textStyle = { backgroundColor: "cyan" };
-
-const styles = StyleSheet.create({
-  container: {
-    color: "red",
-  },
-  view: {
-    width:100,
-    height: 100,
-    backgroundColor: "red"
-  }
-});

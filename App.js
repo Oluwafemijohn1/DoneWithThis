@@ -18,25 +18,12 @@ import AppTextInput from "./components/AppTextInput";
 import CustomSwitch from "./components/practiceComponent/CustomSwitch";
 import DatePicker from "./components/practiceComponent/DatePicker";
 import AppPicker from "./components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 
-const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Cameras", value: 3 },
-];
 
 export default function App() {
   const [category, setCategory] = useState();
   return (
-    <SafeAreaScreen>
-      <AppPicker
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-        items={categories}
-        icon="apps"
-        placeholder="Category"
-      />
-      <AppTextInput icon="email" placeholder="email" />
-    </SafeAreaScreen>
+    <LoginScreen />
   );
 }

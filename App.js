@@ -15,11 +15,12 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
 import CustomTextInput from "./components/practiceComponent/CustomTextInput";
 import AppTextInput from "./components/AppTextInput";
+import CustomSwitch from "./components/practiceComponent/CustomSwitch";
 
 export default function App() {
   return (
     <SafeAreaScreen>
-      <AppTextInput placeholder="Username" icon="email" />
+      <CustomSwitch />
     </SafeAreaScreen>
   );
 }

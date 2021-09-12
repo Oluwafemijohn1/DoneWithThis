@@ -16,11 +16,12 @@ import ListingScreen from "./app/screens/ListingScreen";
 import CustomTextInput from "./components/practiceComponent/CustomTextInput";
 import AppTextInput from "./components/AppTextInput";
 import CustomSwitch from "./components/practiceComponent/CustomSwitch";
+import DatePicker from "./components/practiceComponent/DatePicker";
 
 export default function App() {
   return (
     <SafeAreaScreen>
-      <CustomSwitch />
+      <DatePicker />
     </SafeAreaScreen>
   );
 }

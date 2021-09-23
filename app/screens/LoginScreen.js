@@ -1,43 +1,61 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image, StyleSheet } from "react-native";
-import AppButton from "../../components/AppButton";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
+import AppButton from "../../components/AppButton";
 import AppTextInput from "../../components/AppTextInput";
 import SafeAreaScreen from "../../components/SafeAreaScreen";
+import AppText from "../../components/style_encapsulation/AppText";
+import ErrorMessages from "../../components/ErrorMessages";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(4).label("Password"),
+});
 
 function LoginScreen(props) {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-
   return (
-    <SafeAreaScreen style={styles.container} >
+    <SafeAreaScreen style={styles.container}>
       <Image style={styles.logo} source={require("../assets/total_logo.png")} />
-      <AppTextInput
-        autoCapitalize="none"
-        autoCorrect={false}
-        icon="email"
-        placeholder="Email"
-        keyboardType="email-address"
-        onChangeText={(text) => setEmail(text)}
-        textContentType="emailAddress"
-      />
-      <AppTextInput
-        autoCapitalize="none"
-        autoCorrect={false}
-        icon="lock"
-        onChangeText={(text) => setPassword(text)}
-        placeholder="Password"
-        secureTextEntry
-        textContentType="password"
-      />
-      <AppButton title="Login" onPress={() => console.log(email, password)} />
+      <Formik
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}
+      >
+        {({ handleChange, handleSubmit, errors }) => (
+          <>
+            <AppTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="email"
+              placeholder="Email"
+              keyboardType="email-address"
+              onChangeText={handleChange("email")}
+              textContentType="emailAddress"
+            />
+            <ErrorMessages error={errors.email} />
+            <AppTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="lock"
+              onChangeText={handleChange("password")}
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+            />
+            <ErrorMessages error={errors.password} />
+            <AppButton title="Login" onPress={handleSubmit} />
+          </>
+        )}
+      </Formik>
     </SafeAreaScreen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-      padding: 10,
+    padding: 10,
   },
   logo: {
     width: 80,

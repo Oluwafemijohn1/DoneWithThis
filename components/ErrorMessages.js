@@ -5,8 +5,8 @@ import AppText from './style_encapsulation/AppText';
 import { StyleSheet } from 'react-native';
 
 
-function ErrorMessages({error}) {
-    if(!error) return null;
+function ErrorMessages({error, visible}) {
+    if(!visible || !error) return null;
     return (
         <AppText style={styles.container} >{error}</AppText>
     );

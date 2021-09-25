@@ -24,6 +24,7 @@ export default function ListItem({
             <AppText style={styles.title}>{title}</AppText>
             {subTitle && <AppText style={styles.subTitle}>{subTitle}</AppText>}
           </View>
+          <MaterialCommunityIcons color={colors.medium} name="chevron-right" size={25} />
         </View>
       </TouchableHighlight>
     </Swipeable>
@@ -33,6 +34,7 @@ export default function ListItem({
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     flexDirection: "row",
     padding: 15,
     backgroundColor: colors.white,
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
   detailsContainer: {
     marginLeft: 10,
     justifyContent: "center",
+    flex: 1,
   },
   image: {
     width: 70,

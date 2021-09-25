@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppText from './style_encapsulation/AppText';
+import AppText from '../style_encapsulation/AppText';
 
 import { StyleSheet } from 'react-native';
 

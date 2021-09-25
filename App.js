@@ -19,11 +19,14 @@ import CustomSwitch from "./components/practiceComponent/CustomSwitch";
 import DatePicker from "./components/practiceComponent/DatePicker";
 import AppPicker from "./components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
+import RegisterScreen from "./app/screens/RegisterScreen";
+import ListItem from "./components/ListItem"
 
 
 export default function App() {
   const [category, setCategory] = useState();
   return (
-    <LoginScreen />
+    <ListItem />
   );
 }

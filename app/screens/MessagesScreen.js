@@ -15,8 +15,9 @@ const initialMessages = [
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title:
+      "T2naa a ava akav avkava vakvv akvav anaa anva vva anav akv vkav anva vakva vvfsfnv vfsnv azkdndz dvkavnv vznv avkvds vadv vavnd vakvdakvavsd akvava vkasvas vakvav akva v avfvsvf  vjv  vvavadv a va ",
+    description: "T2naa a ava akav avkava vakvv akvav anaa anva vva anav akv vkav anva vakva vvfsfnv vfsnv azkdndz dvkavnv vznv avkvds vadv vavnd vakvdakvavsd akvava vkasvas vakvav akva v avfvsvf  vjv  vvavadv a va ",
     image: require("../assets/download.jpeg"),
   },
 ];
@@ -51,7 +52,7 @@ export default function MessagesScreen() {
         onRefresh={() => {
           setMessages([
             {
-              id: 2,
+              id: 1,
               title: "T2",
               description: "D2",
               image: require("../assets/download.jpeg"),

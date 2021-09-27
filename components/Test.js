@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
+import * as ImagePicker from 'expo-image-picker'
+
+import SafeAreaScreen from './SafeAreaScreen';
+
 
 function Test(props) {
+
+    const permission = async () =>{
+        const {  granted } = await ImagePicker.requestCameraRollPermissionAsync();
+        if(!granted) alert("You need to enable permissions to access the library");
+    }
+
+    useEffect(() => {
+        permission
+    }, [])
     return (
-        <View style={styles.container}></View>
+        <SafeAreaScreen style={styles.container}></SafeAreaScreen>
     );
 }
 

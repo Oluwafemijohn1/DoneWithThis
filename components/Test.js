@@ -8,7 +8,7 @@ import SafeAreaScreen from './SafeAreaScreen';
 function Test(props) {
 
     const permission = async () =>{
-        const {  granted } = await ImagePicker.requestCameraRollPermissionAsync();
+        const {  granted } = await ImagePicker.requestCameraPermissionsAsync();
         if(!granted) alert("You need to enable permissions to access the library");
     }
 

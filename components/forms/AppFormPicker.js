@@ -3,6 +3,7 @@ import { useFormikContext } from "formik";
 
 import AppPicker from "../AppPicker";
 import ErrorMessages from "./ErrorMessages";
+import { Text } from "react-native";
 
 function AppFormPicker({
   items,
@@ -21,14 +22,14 @@ function AppFormPicker({
         items={items}
         // onBlur={()=> setFieldTouched(name)}
         numberOfColumns={numberOfColumns}
-        onBlur={() => setFieldTouched(name)}
+        // onBlur={() => setFieldTouched(name)}
         onSelectItem={(item) => setFieldValue(name, item)}
         placeholder={placeholder}
         selectedItem={values[name]}
         PickerItemComponent={PickerItemComponent}
         width={width}
       />
-      <ErrorMessages errors={errors[name]} visible={touched[name]} />
+      <ErrorMessages error={errors[name]} visible={touched[name]} />
     </>
   );
 }

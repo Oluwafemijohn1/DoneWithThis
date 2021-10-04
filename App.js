@@ -1,9 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import { StyleSheet, Text, Image, ImageBackground, View } from "react-native";
-import * as ImagePicker from 'expo-image-picker';
-import * as Permission from 'expo-permissions';
+import {
+  StyleSheet,
+  Text,
+  Image,
+  ImageBackground,
+  View,
+  Button,
+} from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import * as Permission from "expo-permissions";
 
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -23,24 +30,16 @@ import AppPicker from "./components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
-import ListItem from "./components/ListItem"
-import Test from "./components/Test"
-
+import ListItem from "./components/ListItem";
+import Test from "./components/Test";
+import ImageInput from "./components/ImageInput";
+import ImageInputList from "./components/ImageInputList";
+import FormImagePicker from "./components/forms/FormImagePicker";
 
 export default function App() {
-
-  const permission = async () =>{
-    const result = await Permission.askAsync(Permission.CAMERA_ROLL, Permission.LOCATION);
-    result.granted
-    const {  granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if(!granted) alert("You need to enable permissions to access the library");
-}
-
-useEffect(() => {
-    permission()
-}, [])
-
   return (
-    <SafeAreaScreen ></SafeAreaScreen>
+    <SafeAreaScreen>
+      <ListingEditScreen />
+    </SafeAreaScreen>
   );
 }

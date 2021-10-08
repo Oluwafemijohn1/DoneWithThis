@@ -11,6 +11,8 @@ import {
 } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import * as Permission from "expo-permissions";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -36,10 +38,40 @@ import ImageInput from "./components/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 import FormImagePicker from "./components/forms/FormImagePicker";
 
+const Link = () =>{
+  const navigation = useNavigation();
+  return (
+    <Button title="Click" onPress={() => navigation.navigate("TweetsDetails")} />
+  )
+}
+
+const Tweets = ({navigation}) => (
+  <SafeAreaScreen>
+    <Text>Tweets</Text>
+    {/* <Button title="View Details" onPress={() => navigation.setOptions({ title: 'Updated!' }) } />
+    <Button title="View Details" onPress={() => navigation.navigate("TweetsDetails") } /> */}
+    <Link />
+  </SafeAreaScreen>
+);
+
+const TweetsDetails = () => (
+  <SafeAreaScreen>
+    <Text>Tweets Details</Text>
+  </SafeAreaScreen>
+);
+
+const Stack = createNativeStackNavigator(); 
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} options={{headerShown: false, }} />
+    <Stack.Screen name="TweetsDetails" component={TweetsDetails} />
+  </Stack.Navigator>
+)
+
 export default function App() {
   return (
-    <SafeAreaScreen>
-      <ListingEditScreen />
-    </SafeAreaScreen>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 }

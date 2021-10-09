@@ -13,6 +13,8 @@ import * as ImagePicker from "expo-image-picker";
 import * as Permission from "expo-permissions";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import EncapsulatingStyles from "./components/practiceComponent/EncapsulatingStyles";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
@@ -41,37 +43,73 @@ import FormImagePicker from "./components/forms/FormImagePicker";
 const Link = () =>{
   const navigation = useNavigation();
   return (
-    <Button title="Click" onPress={() => navigation.navigate("TweetsDetails")} />
+    <Button title="Click" onPress={() => navigation.navigate("TweetsDetails", {id:1} )} />
   )
 }
 
 const Tweets = ({navigation}) => (
   <SafeAreaScreen>
     <Text>Tweets</Text>
-    {/* <Button title="View Details" onPress={() => navigation.setOptions({ title: 'Updated!' }) } />
-    <Button title="View Details" onPress={() => navigation.navigate("TweetsDetails") } /> */}
-    <Link />
+    {/* <Button title="View Details" onPress={() => navigation.setOptions({ title: 'Updated!' }) } /> */}
+    <Button title="View Details" onPress={() => navigation.navigate("TweetsDetails", {id:1} ) } />
+    {/* <Link /> */}
   </SafeAreaScreen>
 );
 
-const TweetsDetails = () => (
+const TweetsDetails = ({ route }) => (
   <SafeAreaScreen>
-    <Text>Tweets Details</Text>
+ 
+    <Text>Tweets Details {route.params.id}</Text>
   </SafeAreaScreen>
 );
 
 const Stack = createNativeStackNavigator(); 
 const StackNavigator = () => (
-  <Stack.Navigator>
-    <Stack.Screen name="Tweets" component={Tweets} options={{headerShown: false, }} />
-    <Stack.Screen name="TweetsDetails" component={TweetsDetails} />
+  <Stack.Navigator screenOptions={{
+    headerStyle:{backgroundColor: "dodgerblue"},
+    headerTintColor: "white"
+  }} >
+    {/* <Stack.Screen name="Tweets" component={Tweets} options={{ title: "Hello" }} /> */}
+    <Stack.Screen name="Tweets" component={Tweets} options={{headerShown: false}} />
+    {/* Passing title dynamically */}
+    <Stack.Screen name="TweetsDetails" component={TweetsDetails} 
+  
+    options={{ title: "Details screen"}} 
+    // this is not working yet
+    // options={({ route })=> ({title: route.params.id})} 
+    />
   </Stack.Navigator>
+);
+
+const Account = () =>(
+  <SafeAreaScreen>
+    <Text>Account</Text>
+  </SafeAreaScreen>
+);
+
+const Tab = createBottomTabNavigator();
+const TabNavigator = () =>(
+  <Tab.Navigator screenOptions={{
+    // tabBarActiveTintColor: "tomato",
+    tabBarActiveBackgroundColor:"tomato",
+    tabBarActiveTintColor: "white",
+    tabBarInactiveBackgroundColor: "#eee",
+    tabBarInactiveTintColor: "black"
+  }}  >
+    <Tab.Screen name="Tweets" component={Tweets} options={{
+      tabBarIcon: ({ size, color})=> <MaterialCommunityIcons name="home" size={size} color={color} />
+    }} />
+    <Tab.Screen name="Account" component={Account} options={{
+      tabBarIcon: ({ size, color})=> <MaterialCommunityIcons name="account" size={size} color={color} />
+    }}  />
+  </Tab.Navigator>
 )
 
 export default function App() {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      {/* <StackNavigator /> */}
+      <TabNavigator />
     </NavigationContainer>
   );
 }

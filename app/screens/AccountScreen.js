@@ -21,10 +21,11 @@ const menuItem = [
       name: "format-list-bulleted",
       backgroundColor: colors.primary,
     },
+    targetScreen: "Messages",
   },
 ];
 
-function AccountScreen() {
+function AccountScreen({ navigation }) {
   return (
     // Section list could all be used for this screen
     <SafeAreaScreen style={styles.screen}>
@@ -49,6 +50,7 @@ function AccountScreen() {
                   backgroundColor={item.Icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate("Messages")}
             />
           )}
         />

@@ -22,7 +22,7 @@ const listing = [
   },
 ];
 
-function ListingsScreen(props) {
+function ListingsScreen({navigation}) {
   return (
     <SafeAreaScreen style={styles.screen} >
       <FlatList
@@ -33,6 +33,7 @@ function ListingsScreen(props) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={()=>navigation.navigate("ListingDetails", item)}
           />
         )}
       />

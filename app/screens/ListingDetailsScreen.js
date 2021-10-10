@@ -5,14 +5,15 @@ import AppText from "../../components/style_encapsulation/AppText";
 import colors from "../config/colors";
 import ListItem from "../../components/ListItem";
 
-export default function ListingDetailsScreen() {
+export default function ListingDetailsScreen({ route }) {
+  const listing = route.params;
   return (
     <View>
-      <Image style={styles.image} source={require("../assets/passage.jpeg")} />
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Red jacket for sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
-        <View style={styles.listContainer} >
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>${listing.price} </AppText>
+        <View style={styles.listContainer}>
           <ListItem
             image={require("../assets/images.jpeg")}
             title="Oluwafemi Ogundipe"
@@ -25,17 +26,17 @@ export default function ListingDetailsScreen() {
 }
 
 const styles = StyleSheet.create({
-    detailsContainer: {
-        padding: 20,
-    },
-    image: {
-      width: "100%",
-      height: 300,
-    },
-    listContainer:{
-        marginVertical: 40,
-    },
-    price: {
+  detailsContainer: {
+    padding: 20,
+  },
+  image: {
+    width: "100%",
+    height: 300,
+  },
+  listContainer: {
+    marginVertical: 40,
+  },
+  price: {
     color: colors.secondary,
     fontWeight: "bold",
     fontSize: 20,

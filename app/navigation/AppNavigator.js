@@ -1,18 +1,54 @@
-import React from 'react'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AccountScreen from '../screens/AccountScreen';
-import ListingEditScreen from '../screens/ListingEditScreen';
-import ListingsScreen from '../screens/ListingsScreen';
+import AccountScreen from "../screens/AccountScreen";
+import ListingEditScreen from "../screens/ListingEditScreen";
+import FeedNavigator from "./FeedNavigator";
+import AccountNavigator from "./AccountNavigator";
+import NewListingButton from "./NewListingButton";
 
- const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
- const AppNavigator = () => (
-     <Tab.Navigator>
-         <Tab.Screen name="Listing" component={ListingsScreen} />
-         <Tab.Screen name="ListingEdit" component={ListingEditScreen} />
-         <Tab.Screen name="Account" component={AccountScreen} />
-     </Tab.Navigator>
- );
+const AppNavigator = () => (
+  <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Screen
+      name="Feed"
+      component={FeedNavigator}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name="home" size={size} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="ListingEdit"
+      component={ListingEditScreen}
+      options={({ navigation }) => ({
+        tabBarButton: () => (
+          <NewListingButton
+            onPress={() => navigation.navigate("ListingEdit")}
+          />
+        ),
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons
+            name="plus-circle"
+            size={size}
+            color={color}
+          />
+        ),
+      })}
+    />
+    <Tab.Screen
+      name="Accounts"
+      component={AccountNavigator}
+      options={{
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name="account" size={size} color={color} />
+        ),
+      }}
+    />
+  </Tab.Navigator>
+);
 
- export default AppNavigator;
+export default AppNavigator;

@@ -39,6 +39,8 @@ import Test from "./components/Test";
 import ImageInput from "./components/ImageInput";
 import ImageInputList from "./components/ImageInputList";
 import FormImagePicker from "./components/forms/FormImagePicker";
+import AuthNavigator from "./app/navigation/AuthNavigation";
+import NavigationTheme from "./app/navigation/NavigationTheme";
 
 const Link = () =>{
   const navigation = useNavigation();
@@ -96,7 +98,7 @@ const TabNavigator = () =>(
     tabBarInactiveBackgroundColor: "#eee",
     tabBarInactiveTintColor: "black"
   }}  >
-    <Tab.Screen name="Tweets" component={Tweets} options={{
+    <Tab.Screen name="Feed" component={StackNavigator} options={{
       tabBarIcon: ({ size, color})=> <MaterialCommunityIcons name="home" size={size} color={color} />
     }} />
     <Tab.Screen name="Account" component={Account} options={{
@@ -107,9 +109,9 @@ const TabNavigator = () =>(
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={NavigationTheme} >
       {/* <StackNavigator /> */}
-      <TabNavigator />
+      <AuthNavigator />
     </NavigationContainer>
   );
 }

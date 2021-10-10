@@ -5,11 +5,11 @@ import { Button } from "react-native-elements";
 import colors from "../config/colors";
 import AppButton from "../../components/AppButton";
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
   const RaisedButton = (props) => <Button raised {...props} />;
   return (
     <ImageBackground
-    blurRadius= {2}
+      blurRadius={2}
       style={styles.backgroundimage}
       source={require("../assets/passage.jpeg")}
       imageStyle={{ resizeMode: "cover" }}
@@ -21,11 +21,14 @@ function WelcomeScreen() {
         />
         <Text style={styles.tagline}>Sell what you don't need</Text>
       </View>
-      <View style={styles.buttonContainer} >
-        <AppButton title="Login" />
-        <AppButton title="Register" color="secondary" />
+      <View style={styles.buttonContainer}>
+        <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+        <AppButton
+          title="Register"
+          color="secondary"
+          onPress={() => navigation.navigate("Register")}
+        />
       </View>
-
     </ImageBackground>
   );
 }
@@ -36,8 +39,8 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "center",
   },
-  buttonContainer:{
-    padding:20,
+  buttonContainer: {
+    padding: 20,
     width: "100%",
   },
   tagline: {
@@ -48,7 +51,7 @@ const styles = StyleSheet.create({
   logo: {
     height: 150,
     width: 150,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   logoContainer: {
     position: "absolute",

@@ -25,7 +25,7 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import SafeAreaScreen from "./components/SafeAreaScreen";
 import Icon from "./components/Icon";
 import AccountScreen from "./app/screens/AccountScreen";
-import ListingScreen from "./app/screens/ListingScreen";
+import ListingScreen from "./app/screens/ListingsScreen";
 import CustomTextInput from "./components/practiceComponent/CustomTextInput";
 import AppTextInput from "./components/AppTextInput";
 import CustomSwitch from "./components/practiceComponent/CustomSwitch";
@@ -41,6 +41,7 @@ import ImageInputList from "./components/ImageInputList";
 import FormImagePicker from "./components/forms/FormImagePicker";
 import AuthNavigator from "./app/navigation/AuthNavigation";
 import NavigationTheme from "./app/navigation/NavigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 const Link = () =>{
   const navigation = useNavigation();
@@ -111,7 +112,7 @@ export default function App() {
   return (
     <NavigationContainer theme={NavigationTheme} >
       {/* <StackNavigator /> */}
-      <AuthNavigator />
+      <AppNavigator />
     </NavigationContainer>
   );
 }

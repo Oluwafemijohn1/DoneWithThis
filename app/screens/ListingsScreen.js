@@ -22,7 +22,7 @@ const listing = [
   },
 ];
 
-function ListingScreen(props) {
+function ListingsScreen(props) {
   return (
     <SafeAreaScreen style={styles.screen} >
       <FlatList
@@ -40,7 +40,7 @@ function ListingScreen(props) {
   );
 }
 
-export default ListingScreen;
+export default ListingsScreen;
 
 const styles = StyleSheet.create({
     screen:{

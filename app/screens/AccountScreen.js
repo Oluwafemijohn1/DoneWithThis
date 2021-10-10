@@ -24,7 +24,7 @@ const menuItem = [
   },
 ];
 
-export default function AccountScreen() {
+function AccountScreen() {
   return (
     // Section list could all be used for this screen
     <SafeAreaScreen style={styles.screen}>
@@ -60,6 +60,8 @@ export default function AccountScreen() {
     </SafeAreaScreen>
   );
 }
+
+export default AccountScreen;
 
 const styles = StyleSheet.create({
   container: {

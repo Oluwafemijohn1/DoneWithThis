@@ -5,6 +5,7 @@ import { widthPercentageToDP as WP, heightPercentageToDP as HP } from "react-nat
 import SafeAreaScreen from "../../components/SafeAreaScreen";
 import Card from "../../components/Card";
 import colors from "../config/colors";
+import Route from "../navigation/Route";
 
 
 const listing = [
@@ -33,7 +34,7 @@ function ListingsScreen({navigation}) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
-            onPress={()=>navigation.navigate("ListingDetails", item)}
+            onPress={()=>navigation.navigate(Route.LISTING_DETAILS, item)}
           />
         )}
       />

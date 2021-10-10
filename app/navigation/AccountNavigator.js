@@ -1,7 +1,9 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+
 import AccountScreen from "../screens/AccountScreen";
 import MessagesScreen from "../screens/MessagesScreen";
+import Route from "./Route";
 
 const Stack = createStackNavigator();
 
@@ -11,9 +13,9 @@ const AccountNavigator = () => (
       presentation: "modal",
     }}
   >
-    <Stack.Screen name="Account" component={AccountScreen} />
+    <Stack.Screen name={Route.ACCOUNT}  component={AccountScreen} />
     <Stack.Screen
-      name="Messages"
+      name={Route.MESSAGES}
       component={MessagesScreen}
       options={{ presentation: "card" }}
     />
